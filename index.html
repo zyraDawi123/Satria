@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZyraDawi | 3D People Table</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <section id="login-screen" class="login-screen">
+        <div class="login-card">
+          <div class="brand-mark">ZD</div>
+          <p class="eyebrow">ZYRADAWI DATA EXPERIENCE</p>
+          <h1>Welcome Back</h1>
+          <p class="muted">Sign in with Google to load your live Google Sheets data.</p>
+          <button id="google-signin" class="google-button">
+            <span class="google-g">G</span> Sign in with Google
+          </button>
+          <button id="sample-mode" class="sample-button">Preview with uploaded CSV</button>
+          <p id="login-message" class="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <main id="dashboard" class="dashboard hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">ZYRADAWI DATA EXPERIENCE</p>
+            <h1>People Universe</h1>
+          </div>
+          <div class="top-actions">
+            <span id="record-count" class="record-count">0 records</span>
+            <span id="user-email" class="user-email"></span>
+            <button id="refresh-data" class="small-button">Refresh data</button>
+            <button id="signout" class="small-button subtle">Sign out</button>
+          </div>
+        </header>
+        <section class="legend-row">
+          <div class="legend"><i class="swatch low"></i> Below $100K</div>
+          <div class="legend"><i class="swatch mid"></i> $100K–$200K</div>
+          <div class="legend"><i class="swatch high"></i> Above $200K</div>
+          <span class="hint">Drag to rotate · Scroll to zoom</span>
+        </section>
+        <section id="stage-wrap">
+          <div id="stage"></div>
+          <div id="loading" class="loading hidden">Loading people…</div>
+          <aside id="detail-panel" class="detail-panel hidden"></aside>
+        </section>
+        <nav class="view-menu" aria-label="3D layout">
+          <button data-layout="table" class="active">TABLE</button>
+          <button data-layout="sphere">SPHERE</button>
+          <button data-layout="helix">HELIX</button>
+          <button data-layout="grid">GRID</button>
+        </nav>
+        <footer class="footer-note">Data is loaded from the configured Google Sheet after Google sign-in.</footer>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
